@@ -1,5 +1,5 @@
 //working on a client to interact with the server we built
-
+//ok so this works... kind of... it isnt necessarily the best example... 
 #if os(Linux)
     import Glibc
 #else
