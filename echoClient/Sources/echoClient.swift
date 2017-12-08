@@ -10,7 +10,7 @@ import Foundation
 
 class EchoClient {
 
-    let bufferSize = 2048
+    let bufferSize = 4096
     let port: Int
     let server: String
     var listenSocket: Socket? = nil
@@ -31,8 +31,7 @@ class EchoClient {
       var dataRead = Data(capacity: bufferSize)
       var cont = true
        repeat {
-          print("Enter Text:")
-          if let entered = readLine(strippingNewline: true) {
+			if let entered = readLine(strippingNewline: false) {
             try socket.write(from: entered)
             if entered.hasPrefix("quit") {
                cont = false
